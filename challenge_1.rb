@@ -13,11 +13,10 @@
 #   we usually have to do some research on how the task is done:
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
-
 puts 'Hello, let\'s calculate your monthly payment.'
 puts
 
-puts 'Please enter your interest rate without the \'%\' (ex: 4.50):'
+puts 'Please enter your interest rate without the \'%\' (ex: 4.50%):'
 rate = gets.chomp.to_f
 
 puts 'Now enter the length of your loan (in years):'
@@ -27,14 +26,9 @@ puts 'Last step, please enter how much money you\'re borrowing:'
 pv = gets.chomp.to_i
 
 def pmt(rate, nper, pv)
-	# convert rate to percent and monthly
 	r = rate / 12 / 100
-	# numerator
-	n = r * pv
-	# denominator
-	d = 1 - (1+r)**-nper
-	#calc montly payment
-	pmt = n / d
+	term = nper*12
+	pmt = (r*pv)/(1-(1+r)**-term)
 end
 
 puts "Your monthly payment will be $#{pmt(rate, nper, pv).round(2)}."
