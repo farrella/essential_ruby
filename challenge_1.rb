@@ -13,7 +13,7 @@
 #   we usually have to do some research on how the task is done:
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
-puts 'Hello, let\'s calculate your monthly payment.'
+puts 'Hello, let\'s calculate your monthly payment!'
 puts
 
 puts 'Please enter your interest rate without the \'%\' (ex: 4.50%):'
