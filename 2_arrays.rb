@@ -8,3 +8,4 @@ puts "The second student is #{students[1]}."
 students << "Andrew"
 
 puts "The last student is #{students.last}."
+
