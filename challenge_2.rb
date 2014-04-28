@@ -20,19 +20,15 @@ pv = 100000.0
 
 loan_quotes.each do |quote|	
 
-def pmt(rate,nper,pv)
-	rate = loan_quotes["rate"]
-	puts rate
+	def pmt(rate, nper, pv)
+		rate.to_f = "#{loan_quotes["rate"]}"
+		r = rate / 12 / 100
+		term = nper*12
+		pmt = (r*pv)/(1-(1+r)**-term)
 
-	# puts "#{quote["bank"]} quoted a rate of #{quote["rate"]*100}% resulting in a payment of #{(quote["rate"]/12*pv)/(1-(1+100)}."
-
-	# # def pmt(rate, nper, pv)
-	# # 	r = rate / 12 / 100
-	# 	term = nper*12
-	# 	pmt = (r*pv)/(1-(1+r)**-term)
-	# end
-
-end
+	puts "#{quote["bank"]} quoted a rate of #{quote["rate"]*100}% resulting in a payment of $#{pmt(rate, nper, pv).round(2)}"
+	
+	end
 end
 
 
