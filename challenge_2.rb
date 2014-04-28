@@ -15,20 +15,20 @@ loan_quotes = [
   { "bank" => "Ash Street Bank", "rate" => 0.011}
 ]
 
+rate = "#{loan_quotes["rate".to_f]}"
 nper = 180
 pv = 100000.0
 
 loan_quotes.each do |quote|	
 
 	def pmt(rate, nper, pv)
-		rate.to_f = "#{loan_quotes["rate"]}"
-		r = rate / 12 / 100
+		r = rate.to_f
 		term = nper*12
 		pmt = (r*pv)/(1-(1+r)**-term)
-
-	puts "#{quote["bank"]} quoted a rate of #{quote["rate"]*100}% resulting in a payment of $#{pmt(rate, nper, pv).round(2)}"
-	
 	end
+
+	puts "#{quote["bank"]} quoted a rate of #{quote["rate"]*100}% resulting in a payment of $#{pmt(rate, nper, pv)}"
+
 end
 
 
