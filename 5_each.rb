@@ -1,10 +1,10 @@
-# Each
+# # Each
 
-numbers = [3, 1, 5, 4]
+# numbers = [3, 1, 5, 4]
 
-numbers.each do |a_number|
-  puts a_number * a_number
-end
+# numbers.each do |a_number|
+#   puts a_number * a_number
+# end
 
 
 rb = { "first_name" => "Raghu", "last_name" => "Betina" }
